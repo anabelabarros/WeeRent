@@ -1,1 +1,21 @@
-<h1>Index items index</h1>
+<h1>Items</h1>
+
+<% @items.each do |item| %>
+<%= item.name %>
+<% end %>
+
+
+
+
+<%# <template id="itemCardTemplate">
+  <div class='col-3'>
+    <div class="card">
+      <img src="" class="card-img-top" alt="">
+      <div class="card-body">
+        <h2 class="card-product-name">#</h2>
+        <p class="card-product-description">Description</p>
+        <a href="#" class="btn btn-primary" target="_blank">Click to rent!</a>
+      </div>
+    </div>
+  </div>
+</template> %>
