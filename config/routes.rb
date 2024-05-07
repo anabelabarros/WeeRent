@@ -12,6 +12,19 @@ Rails.application.routes.draw do
   get "/sleep", to: "pages#index"
 
   # Defines the root path route ("/")
+# <<<<<<< show
+  # root "posts#index
+#   resources :items
+  resources :bookings
+#   resources :users, only: [:new, :create, :edit, :update]
+
+
+
+#   get '/login', to: 'sessions#new', as: 'login'
+#   post '/login', to: 'sessions#create'
+#   delete '/logout', to: 'sessions#destroy', as: 'logout'
+# =======
   # root "posts#index"
   resources :items
+# >>>>>>> master
 end

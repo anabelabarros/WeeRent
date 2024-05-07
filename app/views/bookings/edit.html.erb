@@ -1,0 +1,12 @@
+<%# Form for editing an existing booking %>
+<h1>Edit Booking</h1>
+
+<%= form_with(model: @booking, url: booking_path(@booking), method: :patch) do |form| %>
+  <!-- Add form fields for booking attributes -->
+  <%= form.label :item_id %>
+  <%= form.select :item_id, options_for_select(Item.all.map { |item| [item.name, item.id] }, @booking.item_id) %>
+
+  <!-- Add other form fields as needed -->
+
+  <%= form.submit "Update Booking" %>
+<% end %>
