@@ -1,0 +1,13 @@
+<%# Form for creating a new booking %>
+<!-- app/views/bookings/new.html.erb -->
+<h1>New Booking</h1>
+
+<%= form_with(model: @booking, url: bookings_path) do |form| %>
+  <!-- Add form fields for booking attributes -->
+  <%= form.label :item_id %>
+  <%= form.select :item_id, options_for_select(Item.all.map { |item| [item.name, item.id] }) %>
+
+  <!-- Add other form fields as needed -->
+
+  <%= form.submit "Create Booking" %>
+<% end %>
