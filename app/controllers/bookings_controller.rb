@@ -13,6 +13,7 @@ class BookingsController < ApplicationController
 
   # GET /bookings/new
   def new
+    @item = Item.find(params[:item_id])
     @booking = Booking.new
   end
 
@@ -22,8 +23,10 @@ class BookingsController < ApplicationController
 
   # POST /bookings
   def create
-    @booking = Booking.new(booking_params)
 
+    @booking = Booking.new(booking_params)
+    @booking.user = current_user
+    @booking.item = Item.find(params[:item_id])
     if @booking.save
       redirect_to @booking, notice: 'Booking was successfully created.'
     else
@@ -59,6 +62,6 @@ class BookingsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def booking_params
-      params.require(:booking).permit(:user_id, :item_id, :start_date, :end_date)
+      params.require(:booking).permit(:start_date, :end_date)
     end
 end
