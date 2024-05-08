@@ -8,26 +8,8 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
 
-# <<<<<<< index
-# =======
-#   get "/feeding", to: "pages#index"
-#   get "/sleep", to: "pages#index"
-
-#   # Defines the root path route ("/")
-# # <<<<<<< show
-#   # root "posts#index
-# #   resources :items
-#   resources :bookings
-# #   resources :users, only: [:new, :create, :edit, :update]
-
-
-
-# #   get '/login', to: 'sessions#new', as: 'login'
-# #   post '/login', to: 'sessions#create'
-# #   delete '/logout', to: 'sessions#destroy', as: 'logout'
-# # =======
-#   # root "posts#index"
-# >>>>>>> master
-#   resources :items
-# # >>>>>>> master
-# end
+  resources :items do
+    resources :bookings, only: [:new, :create]
+  end
+  resources :bookings, only: [:destroy]
+end
