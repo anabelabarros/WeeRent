@@ -1,1 +1,15 @@
 // Specific CSS for your home-page
+#offer {
+  text-align: center;
+}
+
+
+.banner {
+  background-image: asset-url('baby-chair.jpg');
+  width: 100%;
+  color: white;
+  height: 700px;
+  background-size: cover;
+  text-align: end;
+  font-size: xxx-large;
+}
