@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
   end
-  
+
   def sleep
     @items= Item.where(category: "sleep")
   end
@@ -18,7 +18,7 @@ class ItemsController < ApplicationController
   end
   def feeding
     @items= Item.where(category: "feeding")
-
+  end
   def new
     @item = Item.new
   end
