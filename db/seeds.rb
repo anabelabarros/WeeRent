@@ -1,6 +1,8 @@
 
 
 puts "Destroying data"
+
+Booking.destroy_all
 Item.destroy_all
 User.destroy_all
 
