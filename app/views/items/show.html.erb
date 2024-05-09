@@ -4,9 +4,10 @@
 
 <div class="product-card" style="border: 1px solid #ccc; padding: 20px; margin: 10px; width: 800px;">
   <div class="product-card__media">
-    <img src="https://baboodle.co.uk/cdn/shop/products/MinlaHighChair-851973.jpg?v=1670324775" alt="Product image" width="200px">
+  <%# <img src="https://baboodle.co.uk/cdn/shop/products/MinlaHighChair-851973.jpg?v=1670324775" alt="Product image" width="200px"> %>
+    <%= cl_image_tag @item.photo.key, width: 200, crop: :fill %>
   </div>
-  <div class="product-card__info">
+    <div class="product-card__info">
     <h2 class="product-card__title"><%= @item.name %></h2>
     <p class="product-card_description"> <%= @item.description %> </p>
     <p class="product-card__price"> £ <%= @item.price %></p>
