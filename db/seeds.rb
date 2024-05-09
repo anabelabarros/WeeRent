@@ -2,9 +2,12 @@ require "open-uri"
 
 puts "Destroying data"
 
+
+puts "Destroying data"
 Booking.destroy_all
 Item.destroy_all
 User.destroy_all
+
 
 puts "Creating Users"
 user = User.create(email: "test@test.com", password: 123456)
