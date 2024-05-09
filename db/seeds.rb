@@ -1,8 +1,10 @@
 
 
 puts "Destroing data"
-User.destroy_all
+Booking.destroy_all
 Item.destroy_all
+User.destroy_all
+
 
 
 puts "Creating Users"
