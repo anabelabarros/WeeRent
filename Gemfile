@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
 # Cloudinary
+gem "cloudinary"
 gem "dotenv-rails"
 ruby "3.1.2"
 gem "devise"
