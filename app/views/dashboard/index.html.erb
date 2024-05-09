@@ -1,0 +1,29 @@
+<h1>Dashboard</h1>
+
+<% if user_signed_in? %>
+  <% if @user_bookings %>
+    <p>You have booked <strong><%= @user_bookings.count %></strong> baby items.</p>
+    <% @user_bookings.each  do |booking|%>
+      <p><strong>Booking ID:</strong> <%= booking.id %></p>
+      <p><strong>Booking Date:</strong> <%= booking.created_at %></p>
+      <p><strong>Item:</strong> <%= booking.item.name %></p>
+      <p><strong>Owner:</strong> <%= booking.item.user.email %></p>
+    <% end %>
+    <% else %>
+      <p>You have no bookings</p>
+  <% end %>
+
+  <% if @owner_items %>
+    <p>You have uploaded <strong><%= @owner_items.count %></strong> baby items.</p>
+    <% @owner_items.each  do |item|%>
+
+      <p><strong>Item Name:</strong> <%= item.name %></p>
+      <p><strong>Item Description:</strong> <%= item.description %></p>
+      <p><strong>Item Price:</strong> <%= item.price %></p>
+    <% end %>
+    <% else %>
+      <p>You own no baby items</p>
+  <% end %>
+<% else %>
+  <p>Please sign in to view your dashboard.</p>
+<% end %>

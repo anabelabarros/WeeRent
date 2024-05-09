@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+
   def new
     @item = Item.new
   end
@@ -39,4 +40,10 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name, :description, :price, :category)
   end
+
+  def booked?
+    bookings_count > 0
+  end
+
+
 end
