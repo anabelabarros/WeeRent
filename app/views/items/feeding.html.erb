@@ -1,5 +1,14 @@
-<h1>Items</h1>
+<h1>Feeding</h1>
+
+
 <div class="container">
+<div class=" d-flex justify-content-around" >
+
+    <div class="categories" ><%= link_to "Sleep", sleep_path  %></div>
+    <div class="categories"><%= link_to "Travel", travel_path  %></div>
+    <div class="categories"><%= link_to "Feeding", feeding_path  %></div>
+    <div class="categories"><%= link_to "Play", play_path  %></div>
+  </div>
 <div class="row m-0" >
 
   <% @items.each do |item| %>
@@ -23,6 +32,6 @@
 
 </div>
 </div>
-<%= link_to "Back To Homepage", root_path %>
+
 <%# <img src="" class="card-img-top" alt=""> %>
-<%# <%= link_to 'book', new_item_booking_path(@item), class: 'product-card__button' %> %>
+<%# <%= link_to 'book', new_item_booking_path(@item), class: 'product-card__button' %>

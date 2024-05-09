@@ -1,0 +1,15 @@
+<%# Form for creating a new product to be listed %>
+<!-- app/views/items/new.html.erb -->
+<h1>New Products</h1>
+
+<%= simple_form_for [@item] do |f| %>
+  <!-- Add form fields for booking attributes -->
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :category %>
+  <%= f.input :price %>
+  <%= f.input :photo, as: :file %>
+
+  <!-- Add other form fields as needed -->
+  <%= f.submit "Add New Product" %>
+<% end %>
