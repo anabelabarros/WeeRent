@@ -13,3 +13,16 @@
   text-align: end;
   font-size: xxx-large;
 }
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #EF626C;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #e5a1a5;;
+  color: white;
+}
