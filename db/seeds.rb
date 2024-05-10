@@ -59,7 +59,7 @@ bear_pillow.save!
 
 # Seeds for items in Play category (4 items)
 
-file = URI.open("#")
+file = URI.open("https://m.media-amazon.com/images/I/71BSWQeR7zL.__AC_SX300_SY300_QL70_ML2_.jpg")
 rattle_ring = Item.new(name:"Rainbow Rattle Ring",  description:"A colorful rattle ring designed to stimulate baby's senses and encourage grasping and shaking.",   user: user,   category: "play", price: 10.00)
 rattle_ring.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 rattle_ring.save!
