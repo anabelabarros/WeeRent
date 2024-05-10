@@ -33,12 +33,12 @@
   &__price {
     font-size: 20px;
     font-weight: bold;
-    color:#EF626C;
+    color: #ef626c;
     margin-bottom: 16px;
   }
 
   &__button {
-    background-color:#EF626C;
+    background-color: #ef626c;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -46,7 +46,17 @@
     cursor: pointer;
 
     &:hover {
-      background-color: #EF626C;
+      background-color: #d84a56;
     }
+  }
+
+  // Add styles for the submit button
+  &__submit-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
   }
 }

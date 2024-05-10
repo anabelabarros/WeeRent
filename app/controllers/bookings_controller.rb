@@ -8,7 +8,7 @@ class BookingsController < ApplicationController
 
   # GET /bookings/1
   def show
-
+    @booking = Booking.find(params[:id])
   end
 
   # GET /bookings/new
@@ -23,12 +23,11 @@ class BookingsController < ApplicationController
 
   # POST /bookings
   def create
-
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.item = Item.find(params[:item_id])
     if @booking.save
-      redirect_to @booking, notice: 'Booking was successfully created.'
+      redirect_to booking_path(@booking), notice: 'Booking was successfully created.'
     else
       render :new
     end
