@@ -1,18 +1,27 @@
-<h1></h1>
+
+<h1>Item Details</h1>
 <%# Displays details of a single booking %>
 <%= stylesheet_link_tag 'application' %>
 
-<div class="product-card" style="border: 1px solid #ccc; padding: 20px; margin: 10px; width: 800px;">
+<div class="product-card" style="border: 1px solid #ccc; padding: 20px; margin: 10px auto; width: 800px;">
   <div class="product-card__media">
-  <%# <img src="https://baboodle.co.uk/cdn/shop/products/MinlaHighChair-851973.jpg?v=1670324775" alt="Product image" width="200px"> %>
     <%= cl_image_tag @item.photo.key, width: 200, crop: :fill %>
   </div>
-    <div class="product-card__info">
+  <div class="product-card__info">
     <h2 class="product-card__title"><%= @item.name %></h2>
-    <p class="product-card_description"> <%= @item.description %> </p>
-    <p class="product-card__price"> £ <%= @item.price %></p>
-    <%# <button class="product-card__button">Book</button> %>
-    <%= link_to 'book', new_item_booking_path(@item), class: 'product-card__button' %>
+    <p class="product-card_description"><%= @item.description %></p>
+    <p class="product-card__price">£<%= @item.price %></p>
+    <h1>New Booking</h1>
+
+    <%= simple_form_for [@item, @booking] do |f| %>
+      <!-- Add form fields for booking attributes -->
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+
+      <!-- Add other form fields as needed -->
+      <%= f.submit "Book this item", class:"product-card__submit-button"%>
+    <% end %>
+
+    <%= link_to "Back To Items", items_path %>
   </div>
 </div>
-<%= link_to "Back To Items", items_path %>

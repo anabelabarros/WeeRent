@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @booking = @item ? Booking.new : nil
   end
 
   def sleep

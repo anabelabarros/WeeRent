@@ -1,8 +1,10 @@
 
+<div class="congratulations-box">
+  <h1>Gongratulations</h1>
+  <h2>Booked: <%= @booking.item.name %></h2>
+  <h3>From <%= @booking.start_date %> to: <%= @booking.end_date %></h3>
 
-<h1>Booking Details</h1>
-
-<p><strong>Booking ID:</strong> <%= @booking.id %></p>
-<p><strong>Booking Date:</strong> <%= @booking.created_at %></p>
-<p><strong>Item:</strong> <%= @booking.item.name %></p>
-<p><strong>User:</strong> <%= @booking.user.email %></p>
+  <p><strong>Item:</strong> <%= @booking.item.name %></p>
+  <p><strong>contact to be in touch with the owner: </strong> <%= @booking.user.email %></p>
+ <%= link_to "See all you bookings", dashboard_path, class:"btn btn-warning" %>
+</div>
