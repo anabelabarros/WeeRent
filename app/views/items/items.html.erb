@@ -1,33 +1,36 @@
-<h1>Items</h1>
+<h1 style="text-align:center">All Products</h1>
 
 
 <div class="container">
   <div class=" d-flex justify-content-around" >
 
+    <div class="categories"><%= link_to "All", items_path  %></div>
     <div class="categories" ><%= link_to "Sleep", sleep_path  %></div>
     <div class="categories"><%= link_to "Travel", travel_path  %></div>
     <div class="categories"><%= link_to "Feeding", feeding_path  %></div>
     <div class="categories"><%= link_to "Play", play_path  %></div>
+
   </div>
 
 
-  <div class="row m-0" >
+  <div class="row m-0 " >
 
     <% @items.each do |item| %>
       <div  class="col-3" >
-      <%= link_to item_path(item) do %>
+
         <div class="card-container" style="flex-wrap:wrap; flex-direction:column; margin-bottom:15px; background-color:white;  border: 1px solid #ccc;padding-right:0px;border-radius: 5px;">
           <div class="card-container-top" style="flex:50% ; display:flex; justify-content:center">
             <%= link_to item_path(item) do  %>
             <%= cl_image_tag item.photo.key, height: 200, width: 200, crop: :fill %>
-            <% end %>
           </div>
-          <div class="card-container-bottom" style="flex:50% ">
+          <div class="card-container-bottom " style="flex:50% ; text-decoration:none">
             <h5><strong><%= item.name %></strong></h5>
             <h4>From £ <%= item.price %></h4>
+            <button>More info</button>
+            <% end %>
           </div>
         </div>
-        <% end %>
+
       </div>
     <% end %>
   <%= link_to "Back To Homepage", root_path %>
