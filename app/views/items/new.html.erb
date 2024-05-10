@@ -1,5 +1,8 @@
 <%# Form for creating a new product to be listed %>
 <!-- app/views/items/new.html.erb -->
+<div class="container">
+<div class="card-category">
+
 <h1>New Products</h1>
 
 <%= simple_form_for [@item] do |f| %>
@@ -13,3 +16,5 @@
   <!-- Add other form fields as needed -->
   <%= f.submit "Add New Product" %>
 <% end %>
+</div>
+</div>
