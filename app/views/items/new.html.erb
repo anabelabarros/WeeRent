@@ -6,7 +6,7 @@
   <!-- Add form fields for booking attributes -->
   <%= f.input :name %>
   <%= f.input :description %>
-  <%= f.input :category %>
+  <%= f.input :category, collection: ["play","travel","sleep", "feeding"] %>
   <%= f.input :price %>
   <%= f.input :photo, as: :file %>
 
