@@ -1,5 +1,5 @@
 
-<h1>Item Details</h1>
+<h1 style="margin-left: 20px ">Item Details</h1>
 <%# Displays details of a single booking %>
 <%= stylesheet_link_tag 'application' %>
 
@@ -19,9 +19,9 @@
       <%= f.input :end_date %>
 
       <!-- Add other form fields as needed -->
-      <%= f.submit "Book this item", class:"product-card__submit-button"%>
+      <%= f.submit "Book this item", class:"product-card__button"%>
     <% end %>
-
+    <br>
     <%= link_to "Back To Items", items_path %>
   </div>
 </div>

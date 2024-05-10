@@ -1,10 +1,15 @@
-
+<div class="product-card" style="border: 1px solid #ccc; padding: 20px; margin: 10px auto; width: 800px;">
 <div class="congratulations-box">
-  <h1>Gongratulations</h1>
-  <h2>Booked: <%= @booking.item.name %></h2>
-  <h3>From <%= @booking.start_date %> to: <%= @booking.end_date %></h3>
-
+  <h1>Congratulations</h1>
+  <br>
+  <h2>Booked:</h2>
+  <h4> <%= @booking.item.name %> </h4>
+  <br>
+  <h4><strong>From:</strong> <%= @booking.start_date %> <strong> to:</strong> <%= @booking.end_date %></h4>
+<br>
   <p><strong>Item:</strong> <%= @booking.item.name %></p>
   <p><strong>contact to be in touch with the owner: </strong> <%= @booking.user.email %></p>
- <%= link_to "See all you bookings", dashboard_path, class:"btn btn-warning" %>
+  <br>
+ <%= link_to "See all you bookings", dashboard_path, class:"btn btn-warning product-card__button" %>
+</div>
 </div>
