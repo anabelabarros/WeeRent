@@ -2,7 +2,7 @@
 
 
 <div class="container">
-<div class=" d-flex justify-content-around" >
+  <div class=" d-flex justify-content-around" >
 
     <div class="categories"><%= link_to "All", items_path  %></div>
     <div class="categories" ><%= link_to "Sleep", sleep_path  %></div>
@@ -11,31 +11,35 @@
     <div class="categories"><%= link_to "Play", play_path  %></div>
 
   </div>
-<div class="row m-0" >
 
-  <% @items.each do |item| %>
-    <div  class="col-3">
 
-      <div class="card-container" style="flex-wrap:wrap; flex-direction:column; background-color:white;  border: 1px solid #ccc;padding-right:0px;border-radius: 5px;">
-        <div class="card-container-top" style="flex:50% ; display:flex; justify-content:center">
+  <div class="grid-container-items" >
+    <% @items.each do |item| %>
+      <div  class="" >
+
+        <div class="card-container">
           <%= link_to item_path(item) do  %>
-          <%= cl_image_tag item.photo.key, height: 200, width: 200, crop: :fill %>
+            <div class="card-container-top">
+              <div class="container-top-image"  >
+                <%= cl_image_tag item.photo.key, height: 200, width: 200, crop: :fill %>
+              </div>
+            </div>
+            <div class="card-container-bottom">
+              <h5><strong><%= item.name %></strong></h5>
+              <h4>From £ <%= item.price %></h4>
+              <div class="container-bottom-button">
 
-        </div>
-        <div class="card-container-bottom" style="flex:50% ">
-          <h5><strong><%= item.name %></strong></h5>
-          <h4>From £ <%= item.price %></h4>
-          <button>More info</button>
+
+              </div>
+            </div>
           <% end %>
         </div>
+
       </div>
+    <% end %>
+  <%= link_to "Back To Homepage", root_path %>
 
-    </div>
-  <% end %>
-<%= link_to "Back To Homepage", root_path %>
-
+  </div>
 </div>
-</div>
-
 <%# <img src="" class="card-img-top" alt=""> %>
 <%# <%= link_to 'book', new_item_booking_path(@item), class: 'product-card__button' %>
